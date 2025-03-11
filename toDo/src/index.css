@@ -66,3 +66,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabla{
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tareas{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}

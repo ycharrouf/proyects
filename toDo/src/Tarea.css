@@ -1,0 +1,24 @@
+.tarea{
+    display: flex;
+    flex-direction: row;
+    font-family: 'Inter', sans-serif;
+    gap: 10px;
+}
+
+.tarea > .title{
+    flex: 80%;
+}
+.tarea > .chek{
+    flex: 80%;
+}
+
+.title{
+    text-align: center;
+    border-radius: 5px;
+}
+.done{
+    text-align: center;
+    background-color: aqua;
+    color: black;
+}
+
