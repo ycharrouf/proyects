@@ -3,22 +3,84 @@
     flex-direction: row;
     font-family: 'Inter', sans-serif;
     gap: 10px;
+    flex: 100%;
+    padding: 10px;
+
 }
 
 .tarea > .title{
-    flex: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex: 60%;
 }
 .tarea > .chek{
-    flex: 80%;
+    flex: 20%;
+}
+.tarea > .remove{
+    flex: 20%;
 }
 
 .title{
     text-align: center;
     border-radius: 5px;
+    transition: all 0.5s
 }
 .done{
     text-align: center;
-    background-color: aqua;
+    background-color: rgb(95, 160, 87);
+    border: 2px solid green;
     color: black;
+    transition: all 0.5s
 }
+input[type="checkbox"] {
+    appearance: none; /* Eliminar estilos nativos */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    
+    width: 50px;
+    height: 50px;
+    background-color: rebeccapurple; /* Color de fondo */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: green;
+    transition: all .5s;
+}
+
+button:hover{
+    background-color: red;
+    color: black;
+    transition: all .5s;
+    border: none;
+}
+
+/* Vamos a ajustar cada tarea para que se muestre diferente en cada pantalla */
+/* Para pantallas grandes (escritorio) */
+@media (min-width: 1024px) {
+    .container {
+        width: 70%;
+    }
+}
+
+/* Para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
 
