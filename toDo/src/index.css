@@ -23,6 +23,7 @@ a:hover {
 }
 
 body {
+  overflow-x: hidden;
   margin: 0;
   display: flex;
   place-items: center;
@@ -78,9 +79,47 @@ body{
   justify-content: center;
   flex-direction: column;
 }
+.titlePage{
+  text-align: center;
+}
 
 .tareas{
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+/* Vamos a ajustar cada tarea para que se muestre diferente en cada pantalla */
+/* Para pantallas grandes (escritorio) */
+@media (min-width: 1024px) {
+  .tabla {
+      width: 100vw;
+  }
+  .tareas{
+    width: 100%;
+  }
+}
+
+/* Para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tabla {
+      width: 100vw;
+  }
+  .tareas{
+    width: 100%;
+  }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .tabla {
+      width: 100vw;
+  }
+  .tareas{
+    width: 100%;
+  }
+  .chek{
+    display: none;
+  }
+
 }

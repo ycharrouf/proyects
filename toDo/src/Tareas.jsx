@@ -18,7 +18,7 @@ function Tareas() {
     }, [tasksData.tasks])
     return (
         <div className="tabla">
-            <div className="title">
+            <div className="titlePage">
                 <h1>Lista de Tareas</h1>
             </div>
             <div className="tareas">

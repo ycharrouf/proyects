@@ -3,8 +3,9 @@
     flex-direction: row;
     font-family: 'Inter', sans-serif;
     gap: 10px;
-    flex: 100%;
     padding: 10px;
+    margin-bottom: 1px solid #3a3a3a;
+    box-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
 
 }
 
@@ -15,25 +16,41 @@
     cursor: pointer;
     flex: 60%;
 }
+.title > h1{
+    text-align: center;
+}
 .tarea > .chek{
+    display: flex;
+    justify-content: center;
     flex: 20%;
 }
 .tarea > .remove{
+    display: flex;
+    justify-content: center;
     flex: 20%;
+}
+.remove{
+    width: 100%;
+    color: #E53935
 }
 
 .title{
     text-align: center;
     border-radius: 5px;
+    background-color: #FF9800;
     transition: all 0.5s
 }
 .done{
     text-align: center;
-    background-color: rgb(95, 160, 87);
-    border: 2px solid green;
-    color: black;
+    background-color: #43A047;
+    color: #212121;
     transition: all 0.5s
 }
+.chek{
+    display:flex;
+    align-items: center;
+}
+
 input[type="checkbox"] {
     appearance: none; /* Eliminar estilos nativos */
     -webkit-appearance: none; /* Safari */
@@ -41,7 +58,7 @@ input[type="checkbox"] {
     
     width: 50px;
     height: 50px;
-    background-color: rebeccapurple; /* Color de fondo */
+    background-color: #FF9800;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -49,38 +66,22 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background-color: green;
+    background-color: #43A047;
     transition: all .5s;
 }
 
 button:hover{
     background-color: red;
-    color: black;
+    color: white;
     transition: all .5s;
     border: none;
 }
 
-/* Vamos a ajustar cada tarea para que se muestre diferente en cada pantalla */
-/* Para pantallas grandes (escritorio) */
-@media (min-width: 1024px) {
-    .container {
-        width: 70%;
-    }
-}
-
-/* Para tabletas */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .container {
-        width: 85%;
-    }
-}
-
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 767px) {
-    .container {
-        width: 100%;
-        padding: 1rem;
+    .title{
+        flex: 80%;
     }
-}
+  }
 
 
