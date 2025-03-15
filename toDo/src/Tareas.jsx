@@ -1,33 +1,58 @@
 import { useEffect } from "react";
 import Tarea from "./Tarea"
-import tasksData from "./aleatoryData";
+import tasksData from "./logic/aleatoryData";
+import Form from "./Form";
+import { generateTaskId, removeTask } from "./logic/logic";
 import { useState } from "react";
+
+
 function Tareas() {
-    let [taskId,setTaskId] = useState({})
+    let [tasks, setTasks] = useState([])
+
+
+    /**
+         *  Add the task to the list of tasks
+         * @param {string} title of the task 
+         */
+    function addTask(title) {
+        const newTask ={
+            title: title,
+            isTaskDone: false,
+        }
+        
+        setTasks((prevTask) => [newTask, ...prevTask]);
+        
+    }
 
     useEffect(() => {
-        async function generateId() {
-            const newTaskId = {};
-            for (const tarea of tasksData.tasks){
-                newTaskId[tarea.title] = await generateTaskId(tarea.title)
-            }
-            setTaskId(newTaskId)
+        function loadTask() {
+            /* setTasks(tasksData.tasks)/* Loads the task in task's array */ 
         }
-
-        generateId();
+        loadTask();
     }, [tasksData.tasks])
+
+
+    useEffect(() =>{
+        if(tasks.length==0) return;
+        console.log('The tasks has been updated correctly');
+    }, [tasks])
     return (
         <div className="tabla">
             <div className="titlePage">
                 <h1>Lista de Tareas</h1>
             </div>
+            <div className="form">
+                <Form
+                    addTask={addTask}
+                ></Form>
+            </div>
             <div className="tareas">
                 {
-                    tasksData.tasks.map((tarea) => {
-                        return(
+                    tasks.map((tarea, index) => {
+                        return (
                             <Tarea
-                                key={taskId[tarea.title]}
-                                id={taskId[tarea.title]}
+                                key={index}
+                                id={index}
                                 isTaskDone={tarea.isTaskDone}
                                 title={tarea.title}
                                 removeTask={removeTask}
@@ -39,31 +64,6 @@ function Tareas() {
         </div>
     )
 
-    /**
-     * This function make de hash that allow to identificate a specific task
-     * @param {string} title identificator of task that we will make hash for it 
-     * @returns the hash
-     */
-    async function generateTaskId(title){
-        const encoder = new TextEncoder();
-        const data = encoder.encode(title);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-        return hashHex        
-    }
 
-    /**
-     * That function remove a spesific task amogn all the task
-     * @param {string} id is the hash of the task that allow to find it 
-     */
-    function removeTask(id){
-        let task = document.getElementById(id);
-        if(task){
-            task.remove();
-            console.log('The task has been deleted correctly');
-        }
-    }
 }
-
 export default Tareas

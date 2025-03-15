@@ -1,4 +1,4 @@
-.tarea{
+.tarea {
     display: flex;
     flex-direction: row;
     font-family: 'Inter', sans-serif;
@@ -9,53 +9,63 @@
 
 }
 
-.tarea > .title{
+.tarea>.title {
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     flex: 60%;
 }
-.title > h1{
+
+.title>h1 {
     text-align: center;
 }
-.tarea > .chek{
+
+.tarea>.chek {
     display: flex;
     justify-content: center;
     flex: 20%;
 }
-.tarea > .remove{
+
+.tarea>.remove {
     display: flex;
     justify-content: center;
     flex: 20%;
 }
-.remove{
+
+.remove {
     width: 100%;
     color: #E53935
 }
 
-.title{
+.title {
+    font-weight: bold;
     text-align: center;
     border-radius: 5px;
     background-color: #FF9800;
     transition: all 0.5s
 }
-.done{
+
+.done {
     text-align: center;
     background-color: #43A047;
     color: #212121;
     transition: all 0.5s
 }
-.chek{
-    display:flex;
+
+.chek {
+    display: flex;
     align-items: center;
 }
 
 input[type="checkbox"] {
-    appearance: none; /* Eliminar estilos nativos */
-    -webkit-appearance: none; /* Safari */
-    -moz-appearance: none; /* Firefox */
-    
+    appearance: none;
+    /* Eliminar estilos nativos */
+    -webkit-appearance: none;
+    /* Safari */
+    -moz-appearance: none;
+    /* Firefox */
+
     width: 50px;
     height: 50px;
     background-color: #FF9800;
@@ -70,7 +80,7 @@ input[type="checkbox"]:checked {
     transition: all .5s;
 }
 
-button:hover{
+button:hover {
     background-color: red;
     color: white;
     transition: all .5s;
@@ -79,9 +89,7 @@ button:hover{
 
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 767px) {
-    .title{
+    .title {
         flex: 80%;
     }
-  }
-
-
+}

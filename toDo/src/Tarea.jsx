@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Tarea.css'
+import './styles/Tarea.css'
 
 function Tarea({ title, isTaskDone, id, removeTask }) {
     //Las exclamaciones hacen que si no tiene valor, es undefined o null automaticamente tome el valor de false

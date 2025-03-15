@@ -118,8 +118,11 @@ body{
   .tareas{
     width: 100%;
   }
+  .title{
+    margin-right: 2rem;
+  }
   .chek{
-    display: none;
+    display: none !important;
   }
 
 }
