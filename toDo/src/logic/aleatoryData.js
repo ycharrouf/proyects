@@ -1,6 +1,6 @@
 const tasksData = {
     totalTasks: 50,
-    tasks: Array.from({ length: 50 }, (_, i) => {
+    tasks: (() => {
         const titles = [
             "Buy groceries", "Finish project", "Call mom", "Read a book", "Exercise",
             "Clean the house", "Fix the sink", "Plan vacation", "Write blog post",
@@ -17,12 +17,13 @@ const tasksData = {
             "Plan weekly meals", "Check tire pressure", "Volunteer at shelter",
             "Visit grandparents", "Complete survey", "Update software"
         ];
-        return {
-            id: i + 1,
-            title: titles[Math.floor(Math.random() * titles.length)],
-            isTaskDone: Math.random() > 0.5, // 50% probabilidad de estar completada
-        };
-    })
+
+        return titles.map((title, index) => ({
+            id: index + 1,
+            title,
+            isTaskDone: Math.random() > 0.5,
+        }));
+    })()
 };
 
 export default tasksData;

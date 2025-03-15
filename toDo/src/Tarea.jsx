@@ -1,10 +1,9 @@
 import { useState } from "react";
 import './styles/Tarea.css'
 
-function Tarea({ title, isTaskDone, id, removeTask }) {
-    //Las exclamaciones hacen que si no tiene valor, es undefined o null automaticamente tome el valor de false
-    let [isDone, setIsDone] = useState(!!isTaskDone);
+function Tarea({ title, isTaskDone = false, id, removeTask }) {
 
+    let [isDone, setIsDone] = useState(isTaskDone);
     let tileDone = (isDone) ? 'title done' : 'title';
 
 
@@ -39,7 +38,7 @@ function Tarea({ title, isTaskDone, id, removeTask }) {
                     type="checkbox"
                     name="isDone"
                     checked={isDone}
-                    onClick={() => setIsDone(!isDone)}
+                    onChange={() => setIsDone(!isDone)}
                 />
             </div>
         </div>

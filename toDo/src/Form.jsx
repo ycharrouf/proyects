@@ -6,8 +6,6 @@ function Form({addTask}) {
     
     function handlesubmint(event){
         event.preventDefault();
-        console.log('esto entra');
-        
         if(!inputRef.current) return;
 
         const titleTaskAdd = inputRef.current.value;
@@ -20,11 +18,10 @@ function Form({addTask}) {
     
     return (
         <>
-            <h3>Add task</h3>
             <form onSubmit={handlesubmint}>
-                <label htmlFor="task">Title of the task:</label>
-                <input ref={inputRef} type="text" name="task" placeholder='Add a task'/>
-                <button type='submit' >Add task</button>
+                <label htmlFor="task">Add task</label>
+                <input ref={inputRef} type="text" name="task" placeholder='Tile of the task'/>
+                <button type='submit' >➕</button>
             </form>
         </>
     )

@@ -1,13 +1,57 @@
-.h3{
-    text-align: center;
-
-}
-form{
+.form {
+    font-size: larger;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    align-items: center;
+    flex-direction: column;
 }
-form > button{
-    flex-wrap: wrap;
+
+form {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    gap: 10px;
+    width: 80%;
+    height: 200px;
+    background-color: #0d0d0d;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+form>input {
+    border: none;
+    height: 35px;
+    width: 80%;
+    background-color: #000;
+    color: #ffffff;
+    border: 1px solid #4fc520;
+    border-radius: 10px;
+    text-align: center;
+}
+
+form>input::placeholder {
+    color: #4fc520;
+    text-align: center;
+    font-weight: bold;
+}
+
+form>input:focus{
+    color: #4fc520;
+    outline: 3px solid #4fc520;
+    text-align: center;
+}
+
+form>button {
+    width: 80%;
+    color: #000;
+    background-color: #658569;
+}
+
+form>button:hover {
+    width: 80%;
+    background-color: #4fc520;
+    color: fff;
 }

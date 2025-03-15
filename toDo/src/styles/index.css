@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -98,6 +98,9 @@ body{
   .tareas{
     width: 100%;
   }
+  .form{
+    width: 100%;
+  }
 }
 
 /* Para tabletas */
@@ -108,6 +111,9 @@ body{
   .tareas{
     width: 100%;
   }
+  .form{
+    width: 100%;
+  }
 }
 
 /* Para pantallas pequeñas (móviles) */
@@ -116,6 +122,9 @@ body{
       width: 100vw;
   }
   .tareas{
+    width: 100%;
+  }
+  .form{
     width: 100%;
   }
   .title{
