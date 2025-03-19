@@ -5,7 +5,7 @@ function Pass() {
   const [pass, setPass] = useState(null);
   let [characters, setCharacters] = useState([]);
 
-  let classPass = (pass) ? 'd-block p-8 border-2 w-150 text-center rounded-3xl text-3xl' : 'hidden'; /* Hay que aplicar estilso en funcion de si tenemos contraseñas o no */
+  let classPass = (pass) ? 'd-block p-8 border-2 w-70 sm:w-150 text-center rounded-3xl p-4 text-xs sm:text-2xl' : 'hidden'; /* Hay que aplicar estilso en funcion de si tenemos contraseñas o no */
   console.log(classPass);
 
 
